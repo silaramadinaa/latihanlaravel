@@ -153,4 +153,43 @@ Route::get('pesan/{makanan?}/{minuman?}/{cemilan?}', function ($a=null,$b=null,$
     }
     return "$pesan";
 });
+Route::get('/testmodel', function () {
+    $query = App\Models\Post::all();
+    return $query;
+});
+Route::get('/testmodel2', function () {
+    $query = App\Models\Post::find(1);
+    return $query;
+});
+Route::get('/testmodel3', function () {
+    $query = App\Models\Post::where('title','like','%i%')->get();
+    return $query;
+});
+Route::get('/testmodel4', function () {
+    $post = App\Models\Post::find(1); 
+    $post->title = "Tips Cepat NKH"; 
+    $post->save(); return $post;
+});
+Route::get('/testmodel5', function () {
+    $post = App\Models\Post::find(1); 
+    $post->delete(); 
+});
+Route::get('/testmodel6', function () {
+    $post = new App\Models\Post; 
+    $post->title = "8 Amalan Pembuka Jodoh"; 
+    $post->content = "shalat malam"; 
+    $post->save(); return $post; 
+});
+Route::get('testpost', function () {
+    $query=App\Models\Post::all();
+    return view('test-post', compact('query'));
+});
+Route::get('hero', function () {
+    $query=App\Models\hero::all();
+    return view('hero', compact('query'));
+});
+Route::get('testhero', function () {
+    $query = App\Models\hero::all();
+    return $query;
+});
 ?>
