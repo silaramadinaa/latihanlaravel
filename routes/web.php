@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MyController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -192,4 +194,16 @@ Route::get('testhero', function () {
     $query = App\Models\hero::all();
     return $query;
 });
+//Route view
+Route::get('beranda', function () {
+    return view('beranda');
+});
+//Route Controller 
+route::get('latihan-controller', 
+[MyController::class,'latihan']
+);
+route::get('biodata-saya',
+[MyController::class,'biodata']
+);
+Route::get('bio',[MyController::class,'bio']);
 ?>
