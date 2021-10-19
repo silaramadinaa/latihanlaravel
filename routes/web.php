@@ -206,4 +206,14 @@ route::get('biodata-saya',
 [MyController::class,'biodata']
 );
 Route::get('bio',[MyController::class,'bio']);
+Route::get('barang',[MyController::class,'barang']);
+Route::get('pesanan',[MyController::class,'pesanan']);
+Route::get('pembelian',[MyController::class,'pembelian']);
+Route::get('pembeli1',[MyController::class,'pembeli']);
+Route::get('suplier',[MyController::class,'suplier']);
+Route::get('/barang/{id}', [MyController::class, 'barangbang']);
+Route::get('/pesanan/{id}', [MyController::class, 'pesansan']);
+Route::get('/pembelian/{id}', [MyController::class, 'pembelianpem']);
+Route::get('/pembeli/{id}', [MyController::class, 'pembelipem']);
+Route::get('/suplier/{id}', [MyController::class, 'supliersup']);
 ?>

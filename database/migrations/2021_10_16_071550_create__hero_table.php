@@ -13,7 +13,7 @@ class CreateHeroTable extends Migration
      */
     public function up()
     {
-        Schema::create('Hero', function (Blueprint $table) { 
+        Schema::create('hero', function (Blueprint $table) { 
             $table->increments('id'); 
             $table->string('realName')->unique(); 
             $table->string('heroName');
@@ -34,6 +34,6 @@ class CreateHeroTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Hero');
+        Schema::dropIfExists('hero');
     }
 }
